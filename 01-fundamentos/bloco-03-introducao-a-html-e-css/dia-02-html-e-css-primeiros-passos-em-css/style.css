@@ -1,0 +1,29 @@
+h1 {
+    font-size: 65px;
+    color: orangered;
+    font-family: sans-serif;
+    line-height: 10px;
+    text-align: center;
+    text-decoration:underline;
+}
+
+.cor {
+    background-color: yellow;
+}
+p {
+    font-weight: 600;
+    font-size: 3em;
+    font-style: oblique;
+}
+body {
+    font-size: 16px;
+}
+.azul {
+    background-color: blue;
+}
+.verde {
+    background-color: green;
+}
+.roxo {
+    background-color: purple;
+}
