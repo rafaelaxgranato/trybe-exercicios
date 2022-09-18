@@ -18,12 +18,12 @@ p {
 body {
     font-size: 16px;
 }
-.azul {
+#azul {
     background-color: blue;
 }
-.verde {
+#verde {
     background-color: green;
 }
-.roxo {
+#roxo {
     background-color: purple;
 }
