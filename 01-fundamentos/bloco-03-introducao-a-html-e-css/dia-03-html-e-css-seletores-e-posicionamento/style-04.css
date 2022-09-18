@@ -1,23 +1,23 @@
 div:hover {
     border: 1px solid blue;
 }
-div:nth-of-type(1) {
+div:nth-of-type(1) > h3 {
     color: green;
 }
-div:nth-of-type(2) {
+div:nth-of-type(2) > h3 {
     color: red;
     font-style: normal;
 }
-div:nth-of-type(3) {
+div:nth-of-type(3) > h3 {
     color: yellow;
     font-style: italic;
-    font-size: xx-large;
+    font-size:x-large;
 }
-div:nth-of-type(4) {
+div:nth-of-type(4) > h3 {
     color: purple;
     font-style:oblique;
 }
-div:nth-of-type(5) {
+div:nth-of-type(5) > h3 {
     color: pink;
 }
 div:nth-of-type(odd) {
