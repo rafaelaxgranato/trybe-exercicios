@@ -7,7 +7,6 @@ li:hover {
 li:active {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-ol, ul {
+li {
     list-style: none;
 }
