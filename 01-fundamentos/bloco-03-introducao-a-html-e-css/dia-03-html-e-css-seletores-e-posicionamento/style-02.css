@@ -12,7 +12,7 @@
   
   .baloon {
     position: absolute;
-    top: 50px;
+    top: 200px;
     left: 290px;
   }
   
@@ -20,12 +20,13 @@
     font-size: 25px;
     position: absolute;
     left: 310px;
+    top: 240px;
     z-index: 1;
   }
   
   .bowser {
     width: 200px;
     position: absolute;
-    top: 150px;
+    top: 300px;
     left: 600px;
   }
