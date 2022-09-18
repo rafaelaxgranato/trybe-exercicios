@@ -1,0 +1,43 @@
+ol li {
+    background-color: yellow;
+}
+ol li:nth-of-type(even) {
+    color: green;
+}
+ol li:nth-of-type(odd) {
+    text-transform: uppercase;
+}
+h1, h3 {
+    color: red;
+}
+h1 {
+    font-size: 40px;
+    border: 1px solid black;
+}
+li {
+    font-size: 20px;
+}
+li.italic {
+    font-weight: bolder;
+}
+li.top {
+    color: blue;
+}
+li.java {
+    background-color: pink;
+}
+a:hover {
+    font-weight: bolder;
+}
+.orange:hover {
+    color: orange
+}
+.green:hover {
+    color: green;
+}
+.black:hover {
+    color: black;
+}
+.yellow:hover {
+    color: yellow;
+}
