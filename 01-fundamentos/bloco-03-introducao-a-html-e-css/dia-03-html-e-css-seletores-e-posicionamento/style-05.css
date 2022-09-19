@@ -10,34 +10,37 @@ ol li:nth-of-type(odd) {
 h1, h3 {
     color: red;
 }
-h1 {
+h1 em, h3 em {
     font-size: 40px;
     border: 1px solid black;
 }
 li {
     font-size: 20px;
 }
-li.italic {
+li em {
     font-weight: bolder;
 }
-li.top {
+#linguagens li:not(:nth-child(n+4)) {
     color: blue;
 }
-li.java {
+.java {
     background-color: pink;
 }
 a:hover {
     font-weight: bolder;
 }
-.orange:hover {
+#aliados li a[href*="stackoverflow"]:hover {
     color: orange
 }
-.green:hover {
+#aliados li a[href*="w3schools"]:hover {
     color: green;
 }
-.black:hover {
+#aliados li a[href*="mozilla"]:hover {
     color: black;
 }
-.yellow:hover {
+#aliados li a[href*="devdocs"]:hover {
     color: yellow;
+}
+#aliados li a[href*="trybe"]:hover {
+    color: green;
 }
