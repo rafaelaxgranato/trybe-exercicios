@@ -4,12 +4,39 @@ body{
 }
 aside {
     float: right;
-}
-header {
+    width: 18%;
     text-align: center;
-    color: rgb(35, 105, 107);
+}
+h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 3%;
+}
+h2 {
+    color: green ;
+}
+h3 {
+    color: brown ;
 }
 table, th, td {
     border: 1px solid rgb(35, 105, 107);
     border-collapse: collapse;
+    margin: 2%;
+}
+footer {
+    text-align: right;
+    color: black;
+}
+img {
+    margin: 2%;
+}
+article {
+    width: 70%;
+}
+nav {
+    text-align: right;
+    font-size: large;
+}
+p{
+    text-align: justify;
 }
