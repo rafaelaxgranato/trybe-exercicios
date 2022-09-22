@@ -26,6 +26,8 @@ table, th, td {
 footer {
     text-align: right;
     color: black;
+    border-top: 1px solid gray;
+    margin-top: 2%;
 }
 img {
     margin: 2%;
@@ -36,6 +38,8 @@ article {
 nav {
     text-align: right;
     font-size: large;
+    border-bottom : 1px solid gray;
+    margin-bottom: 2%;
 }
 p{
     text-align: justify;
