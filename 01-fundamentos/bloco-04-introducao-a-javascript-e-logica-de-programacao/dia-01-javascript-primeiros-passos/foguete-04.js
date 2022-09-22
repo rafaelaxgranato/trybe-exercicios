@@ -1,4 +1,4 @@
-const a = 90;
+const a = 0;
 const b = 45;
 const c = 45;
 const soma = a + b + c;
@@ -11,5 +11,5 @@ if (a > 0 && b > 0 && c > 0) {
     }
 }
 else {
-    console.log(false);
+    console.log("erro");
 }
