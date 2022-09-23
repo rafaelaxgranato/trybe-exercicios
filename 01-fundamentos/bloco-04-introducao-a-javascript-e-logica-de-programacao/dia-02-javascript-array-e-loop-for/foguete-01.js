@@ -16,7 +16,7 @@ else {
     console.log("valor menor ou igual a 20");
 }
 let maior = numbers[0];
-for (index = 0; index < numbers.length; index += 1) {
+for (index = 1; index < numbers.length; index += 1) {
     if (numbers[index] > maior) {
         maior = numbers[index];
     }
@@ -33,7 +33,7 @@ if (impares == 0) {
     console.log("nenhum valor ímpar encontrado");
 }
 let menor = numbers[0];
-for (index = 0; index < numbers.length; index +=1) {
+for (index = 1; index < numbers.length; index +=1) {
     if (menor > numbers[index]) {
         menor = numbers[index];
     }
