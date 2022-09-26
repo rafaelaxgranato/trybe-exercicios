@@ -1,10 +1,13 @@
-for (let index1 = 2; index1 <= 50, index1 += 1) {
-    for (let index2 = 2; index2 <= 50; index2 += 1) {
-        if (index1 % index2 != 0) {
-            let contador += 1;
-        }
-        if (contador == 1) {
-            console.log("o número ", index1, " é primo")
+let maior = 2;
+for (let numero = 2; numero <= 50; numero += 1) {
+    let primo = true;
+    for (let divisor = 2; divisor < numero; divisor += 1) {
+        if (numero % divisor == 0) {
+            primo = false;
         }
     }
+    if (primo) {
+        maior = numero;                
+    }
 }
+console.log(maior);
