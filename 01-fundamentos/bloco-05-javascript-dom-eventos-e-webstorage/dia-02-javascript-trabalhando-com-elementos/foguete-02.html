@@ -1,0 +1,28 @@
+<main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho"></section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho"></section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho"></section>
+      <section id="quartoEUltimoFilho"></section>
+    </section>
+  </main>
+  <script>
+    let father = document.getElementById("pai");
+    let brother = document.createElement('section');
+    father.appendChild(brother);
+
+    let where = document.getElementById("elementoOndeVoceEsta");
+    let sonWhere = document.createElement('section');
+    where.appendChild(sonWhere);
+
+    let first = document.getElementById("primeiroFilhoDoFilho");
+    let sonFirst = document.createElement('p');
+    first.appendChild(sonFirst);
+
+    let sonBorn = first.firstElementChild;
+    let third = sonBorn.parentNode.parentNode.nextSibling;
+  </script>
