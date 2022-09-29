@@ -16,6 +16,6 @@ switch (peca.toLowerCase()) {
         console.log("movimento vertical ou horizontal");
         break;
     default:
-        console.log("erro")
+        console.log("erro");
 
     }

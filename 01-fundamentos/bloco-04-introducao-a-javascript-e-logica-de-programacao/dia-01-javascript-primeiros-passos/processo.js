@@ -8,7 +8,7 @@ switch(situacao) {
         break;
     case 'reprovada':
         console.log("Você foi reprovada(o)");
-    break;
+        break;
     default:
         console.log("Informação incorreta");    
 }
