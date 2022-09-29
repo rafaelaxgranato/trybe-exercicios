@@ -3,11 +3,11 @@ for (let index = 0; index < numbers.length; index += 1) {
     console.log(numbers[index]);
 }
 let soma = 0;
-for (index = 0; index < numbers.length; index += 1) {
+for (let index = 0; index < numbers.length; index += 1) {
     soma += numbers[index];  
 }
 console.log(soma);
-let media = soma / (numbers.length)
+let media = soma / numbers.length
 console.log(media);
 if (media > 20) {
     console.log("valor maior que 20");
@@ -24,12 +24,12 @@ for (index = 1; index < numbers.length; index += 1) {
 console.log(maior);
 let impares = 0;
 for (index = 0; index < numbers.length; index += 1) {
-    if (numbers[index] % 2 != 0) {
+    if (numbers[index] % 2 !== 0) {
         impares += 1;
     }
 }
 console.log(impares);
-if (impares == 0) {
+if (impares === 0) {
     console.log("nenhum valor ímpar encontrado");
 }
 let menor = numbers[0];
@@ -45,7 +45,7 @@ for (index = 1; index < 26; index += 1) {
 }
 console.log(array);
 let arrayDivisao = [];
-for (index = 0; index < array.length; index += 1) {
+for (let index = 0; index < array.length; index += 1) {
     let divisao = array[index] / 2;
     arrayDivisao.push(divisao);
 }

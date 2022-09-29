@@ -1,9 +1,8 @@
 const a = 10;
-const b = 6;
+const b = 1;
 const c = 8;
-if (a % 2 == 0 && b % 2 == 0 && c % 2 == 0) {
-    console.log(false);
+let isOdd = false;
+if (a % 2 !== 0 || b % 2 !== 0 || c % 2 !== 0) {
+    isOdd = true;
 }
-else {
-    console.log(true);
-}
+console.log(isOdd);
