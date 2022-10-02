@@ -2,13 +2,13 @@
 
 function sinal(a) {
     if (a > 0) {
-        return "positive";
+        return 'positive';
     }
     else if (a == 0) {
-        return "zero";
+        return 'zero';
     }
     else {
-        return "negative";
+        return 'negative';
     }
 }
 console.log(sinal(0));

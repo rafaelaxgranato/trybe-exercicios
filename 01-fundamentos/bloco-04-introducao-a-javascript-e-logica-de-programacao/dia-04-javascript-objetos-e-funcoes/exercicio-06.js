@@ -28,8 +28,8 @@ console.log(info);
 // nota
 // recorrente
 
-for (key in info) {
-    console.log(key);
+for (let properties in info) {
+    console.log(properties);
 }
 
 // Faça um novo for/in, mas agora mostre todos os valores das chaves do objeto. Valor esperado no console:
@@ -38,8 +38,8 @@ for (key in info) {
 // Namorada do personagem principal nos quadrinhos do Pato Donald
 // Sim
 
-for (key in info) {
-    console.log(info[key]);
+for (let properties in info) {
+    console.log(info[properties]);
 }
 
 // Agora, defina um segundo objeto com a mesma estrutura (as mesmas chaves) do primeiro e os seguintes valores: ‘Tio Patinhas’, ‘Christmas on Bear Mountain, Dell’s Four Color Comics #178’, ‘O último MacPatinhas’, ‘Sim’. Então, imprima os valores de cada objeto juntos, de acordo com cada uma das chaves. Valor esperado no console:
@@ -55,7 +55,11 @@ let info2 = {
     recorrente: 'Sim',
 };
 
-console.log(info[0], "e", info2[0]);
-console.log(info[1], "e", info2[1]);
-console.log(info[2], "e", info2[2]);
-console.log("Ambos recorrentes");
+for (let properties in info) {
+    if ( properties === 'recorrente' && info[properties] === 'Sim' && info2[properties] === 'Sim') {
+        console.log('Ambos recorrentes');
+    }
+    else {
+        console.log(`${info[properties]} e ${info2[properties]}`);
+    }
+}

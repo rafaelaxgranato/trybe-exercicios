@@ -2,13 +2,13 @@
 
 function maior(a, b, c) {
     if (a > b && a > c) {
-        console.log(a, " é maior que ", b, " e ", c);
+        return `${a} é maior que ${b} e ${c}`;
     }
-    else if (b > c) {
-        console.log(b, " é maior que ", a, " e ", c);
+    else if (b > a && b > c) {
+        return `${b} é maior que ${a} e ${c}`;
     }
     else {
-        console.log(c, " é maior que ", a, " e ", b);
+        return `${c} é maior que ${a} e ${b}`;
     }
 }
-maior(9, 17, 2)
+console.log(maior(9, 17, 2));

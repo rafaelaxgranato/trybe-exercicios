@@ -3,6 +3,6 @@ let names = {
     person2: 'Maria',
     person3: 'Jorge',
   };
-  for (key in names) {
-    console.log("Olá " + names[key]);
+  for (let name in names) {
+    console.log('Olá ' + names[name]);
   }
