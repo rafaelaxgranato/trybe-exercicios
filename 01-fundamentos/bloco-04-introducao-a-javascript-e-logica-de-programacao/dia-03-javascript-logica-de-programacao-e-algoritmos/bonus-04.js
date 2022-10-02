@@ -4,7 +4,7 @@ let meio = (n + 1) / 2;
 let esquerda = meio;
 let direita = meio;
 for (let linha = 0; linha <= meio; linha += 1) {
-    for (let coluna = 0; coluna <= meio; coluna += 1) {
+    for (let coluna = 0; coluna <= n; coluna += 1) {
         if (coluna > esquerda && coluna < direita) {
             forma += '*';
         }
