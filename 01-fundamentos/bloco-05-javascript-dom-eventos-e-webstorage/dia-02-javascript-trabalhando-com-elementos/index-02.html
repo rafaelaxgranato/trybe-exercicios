@@ -12,10 +12,21 @@
   </main>
   <script>
     let father = document.getElementById("pai");
-    father.firstElementChild.removeChild();
-    father.lastElementChild.previousElementSibling.removeChild();
-    father.lastElementChild.removeChild();
-    let where = document.getElementById("elementoOndeVoceEsta");
-    where.firstElementChild.removeChild();
+    // father.firstElementChild.removeChild();
+    // father.lastElementChild.previousElementSibling.removeChild();
+    // father.lastElementChild.removeChild();
+    // let where = document.getElementById("elementoOndeVoceEsta");
+    // where.firstElementChild.removeChild();
+    let fatherSons = father.childNodes;
+    for (let index = fatherSons.length - 1; index >= 0; index -= 1) {
+      let son = fatherSons[index];
+      if (son.id !== 'elementoOndeVoceEsta') {
+        son.remove();
+      }
+    }
+    let second = document.getElementById('segundoEUltimoFilhoDoFilho');
+    second.remove();
+
+
 
   </script>
