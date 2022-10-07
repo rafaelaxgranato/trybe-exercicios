@@ -15,6 +15,7 @@ function addTechClass(event) {
   let techElement = document.querySelector('.tech');
   techElement.classList.remove('tech');
   event.target.classList.add('tech');
+  input.value = '';
 }
 
 firstLi.addEventListener('click', addTechClass);
