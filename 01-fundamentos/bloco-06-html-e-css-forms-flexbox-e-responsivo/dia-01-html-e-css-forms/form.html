@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrybeTrip</title>
+</head>
+<body>
+    <header>
+        <h1>CONCURSO TRYBETRIP</h1>
+    </header>
+    <form action="">
+        <fieldset>
+            <label for="name">Nome:</label>
+            <input type="text" minlength="10" maxlength="40" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" minlength="10" maxlength="50" required>
+            <br>
+            <br>
+            <input type="radio" name="options" id="disney">
+            <label for="disney">Disney</label>
+            <input type="radio" name="options" id="franca">
+            <label for="franca">França</label>
+            <input type="radio" name="options" id="italia">
+            <label for="italia">Itália</label>
+            <input type="radio" name="options" id="argentina">
+            <label for="argentina">Argentina</label>
+            <br>
+            <br>
+            <label for="answer">Por que você deveria ser a pessoa desenvolvedora a ganhar o concurso TrybeTrip?</label>
+            <br>
+            <textarea name="answer" id="answer" cols="30" rows="10" maxlength="500"></textarea>
+            <br>
+            <label for="date">Qual a melhor data para realizar sua viagem?</label>
+            <input type="date" name="date" id="date">
+            <br>
+            <br>
+            <label for="accept1">Gostaria de receber outras incríveis oportunidades oferecidas pela Trybe</label>
+            <input type="checkbox" name="accept1" id="accept1">
+            <br>
+            <label for="accept2">Concordo que imagens das minhas férias poderão ser usadas na divulgação de concursos futuros.</label>
+            <input type="checkbox" name="accept2" id="accept2" required>
+        </fieldset>
+        <br>
+        <button type="submit" id="submit" disabled>Enviar</button>
+        <button id="clear">Apagar</button>
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>
