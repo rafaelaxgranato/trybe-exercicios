@@ -74,3 +74,5 @@ const mage = {
   gameActions.mageTurn(mageDamage);
   gameActions.dragonTurn(dragonDamage);
   console.log(gameActions.newBattleMembers());
+
+console.log('teste');
