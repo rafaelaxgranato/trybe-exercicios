@@ -29,6 +29,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <p>{joke}</p>
+        <button type="button" onClick={ this.fetchJoke } /* Como a requisição para a API já está isolada na função fetchJoke, para pegar uma nova piada basta criar um botão que chame a função fetchJoke ao ser clicado. */ >New joke</button> 
       </div>
     );
   }

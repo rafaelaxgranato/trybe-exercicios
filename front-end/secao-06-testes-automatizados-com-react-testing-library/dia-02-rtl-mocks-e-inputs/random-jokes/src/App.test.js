@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import userEvent from '@testing-library/user-event';
 
 // Faz com que, após cada teste, o mock seja limpo, ou seja, garante que, após o teste, o fetch não seja mais um mock. Isso é bem útil para que não haja interferência entre um teste e outro.
 afterEach(() => jest.clearAllMocks());
@@ -45,4 +46,47 @@ it('fetches a joke', async () => {
     'https://icanhazdadjoke.com/',
     { headers: { Accept: 'application/json' } },
   );
+});
+
+it('fetches a new joke when button is clicked', async () => {
+  const joke1 = {
+    id: '7h3oGtrOfxc',
+    joke: 'Whiteboards ... are remarkable.',
+    status: 200,
+  };
+
+  // Segunda variável com outra piada.
+  const joke2 = {
+    id: 'xXSv492wPmb',
+    joke: 'What is red and smells like blue paint? Red paint!',
+    status: 200,
+  }
+
+  jest.spyOn(global, 'fetch');
+  /* Antes de clicar no botão para fazer uma nova requisição, precisa-se preparar o mock, para que seja retornada uma piada diferente da que foi recebida na primeira requisição.
+  Ao invés de usar o mockResolvedValue, usa-se o mockResolvedValueOnce.
+  Assim, o mock da primeira somente será utilizado uma vez, podendo-se controlar qual resposta será dada em cada vez que a requisição for feita. */
+  global.fetch.mockResolvedValueOnce({
+    json: jest.fn().mockResolvedValue(joke1),
+  });
+  
+  render(<App />);
+  const newJokeButton = screen.getByRole('button', { name: 'New joke' }); // Pega o botão para poder usá-lo nos testes.
+
+  expect(await screen.findByText(joke1.joke)).toBeInTheDocument(); // Testa se uma piada é renderizada na tela logo que a aplicação é iniciada.
+  expect(screen.queryByText(joke2.joke)).not.toBeInTheDocument(); // Testa se a segunda piada não é renderizada na tela antes de o botão ter sido clicado.
+  expect(global.fetch).toBeCalledTimes(1); // Testa se a função fetch foi chamada apenas uma vez.
+
+  // Cria e configura o segundo mock para retornar a nova piada.
+  global.fetch.mockResolvedValueOnce({
+    json: jest.fn().mockResolvedValueOnce(joke2),
+  });
+
+  userEvent.click(newJokeButton); // Com o segundo mock configurado, pode-se clicar no botão.
+
+  /* Depois de clicar no botão, testa-se o comportamento da aplicação.
+  Precisa-se garantir que a primeira piada foi substituída pela segunda piada, ou seja, a segunda piada está sendo exibida, e a primeira piada não está sendo exibida. */
+  expect(await screen.findByText(joke2.joke)).toBeInTheDocument();
+  expect(screen.queryByText(joke1.joke)).not.toBeInTheDocument();
+  expect(global.fetch).toBeCalledTimes(2); // Testa se a função fetch foi chamada duas vezes.
 });
