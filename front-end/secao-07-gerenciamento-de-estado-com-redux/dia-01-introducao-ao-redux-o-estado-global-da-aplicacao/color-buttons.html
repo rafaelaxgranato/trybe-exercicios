@@ -34,11 +34,13 @@
       <button id="random">Random color</button>
     </div>
     <script>
+      //  Estado que manipula a cor de um container gerenciado pelo Redux.
       const INITIAL_STATE = {
       colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
       index: 0,
     };
 
+    // Função que gera cores aleatórias.
     function criarCor() {
       const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
       let cor = '#';
@@ -49,11 +51,15 @@
       return cor;
     }
 
+
     const reducer = (state = INITIAL_STATE, action) => {
+      // Implementa um switch.
       switch (action.type) {
+        // Actions que alteram o valor index guardado no INITIAL_STATE.
         case 'NEXT_COLOR':
           return {
             ...state,
+            // As posições devem iniciar em 0 e não podem exceder a numeração do último item do array.
             index: state.index === state.colors.length - 1 ? 0 : state.index + 1,
           };
         case 'PREVIOUS_COLOR':
@@ -64,20 +70,25 @@
         case 'RANDOM_COLOR':
           return {
             ...state,
+            // Armazena as cores aleatórias no array através do spread operator.
             colors: [...state.colors, criarCor()],
+            // Faz com que a cor seja mostrada ao ser criada, alterando o estado index para a posição dela.
             index: state.colors.length,
           };
+        // Retorna o estado inicial como default.
         default:
           return state;
       }
     };
 
+    // Cria uma store com o parâmetro reducer para a aplicação.
     const store = Redux.createStore(reducer);
 
     const btnPrevious = document.getElementById('previous');
     const btnNext = document.getElementById('next');
     const btnRandom = document.getElementById('random');
 
+    // Cria eventListeners que escutam os cliques de cada botão, e realizam um dispatch com as respectivas actions.
     btnPrevious.addEventListener('click', () => {
       store.dispatch({ type: 'PREVIOUS_COLOR' });
     });
@@ -90,6 +101,7 @@
       store.dispatch({ type: 'RANDOM_COLOR' });
     });
 
+    // Faz o subscribe da store, altando o innerHTML da tag com id value e o style do elemento com id container para a cor atual. Possibilita ver as cores mudando ao fundo e o nome da cor exibida.
     store.subscribe(() => {
       const { colors, index } = store.getState();
       document.getElementById('value').innerHTML = colors[index];
